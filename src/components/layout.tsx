@@ -1,16 +1,8 @@
-import React from 'react'
 import { Modal, TaskBar, List, Alert } from '@react95/core'
-import { ReaderClosed, WindowsExplorer } from '@react95/icons'
 import { Box } from '@chakra-ui/react'
 import { useMenuList } from '../store/menu'
 
 export const Layout = (props: { children: JSX.Element }) => {
-    const [first, toggleFirst] = React.useState(false)
-    const [second, toggleSecond] = React.useState(false)
-
-    const closeFirst = () => toggleFirst(false)
-    const closeSecond = () => toggleSecond(false)
-
     const menulist = useMenuList((state) => state.menulist)
 
     return (
@@ -54,17 +46,6 @@ export const Layout = (props: { children: JSX.Element }) => {
                     message="Pizza Diary will coming soon."
                     closeAlert={menulist[5].onClick}
                     buttons={[{ value: 'OK', onClick: menulist[5].onClick }]}
-                />
-            )}
-
-            {second && (
-                <Modal
-                    defaultPosition={{ x: 50, y: 50 }}
-                    width="300"
-                    height="200"
-                    icon={<ReaderClosed variant="16x16_4" />}
-                    title="Local Disk (C:)"
-                    closeModal={closeSecond}
                 />
             )}
             <TaskBar
