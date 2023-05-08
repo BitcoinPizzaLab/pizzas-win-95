@@ -13,3 +13,11 @@ iframe {
 iframe::-webkit-scrollbar {
     display: none; /* Chrome Safari */
 }
+
+.Button-sc-1wi1b4u-0 {
+    cursor: pointer;
+}
+
+.TitleBar__Title-sc-5cvtvn-3 {
+    user-select: none;
+}
